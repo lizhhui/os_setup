@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+
+  set timeout 30
+  spawn ssh fixer@10.0.0.2 "./ws.workflow"
+  expect "*password:"
+  send   "xxx\r"
+  interact
+
+

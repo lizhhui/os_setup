@@ -1,0 +1,5 @@
+#!/bin/bash
+ln -s ~/lzh/os_setup/mac_auto /Library/LaunchAgent/
+
+sudo launchdctl load -w 
+sudo launchdctl list

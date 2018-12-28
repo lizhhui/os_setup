@@ -1,0 +1,35 @@
+# set this ,may cause emacs org publish ,ssh trump timeout reached
+#PS1="\[\e[33m\]\u@\h\[\e[0m\]: \[\e[35m\]\w  \[\e[0m\]"
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+
+alias ll='ls -lF'
+alias la='ls -lA'
+alias l='ls -CF'
+alias c='cd ..'
+alias le='less'
+alias vnckill='vncserver -kill :77'
+alias vncopen='vncserver -geometry 1400x900 :77'
+alias ssh='ssh -o ServerAliveInterval=60 '
+alias em='cd ~/lzh/Emacs/org/z_blog ; emacs -nw -Q'
+alias ee='emacs'
+alias ff='rm *~'
+alias dotpng='dot -Tpng -o xx.png'
+alias my='ssh fixer@10.0.0.2'
+alias apa_re='sudo apachectl -k graceful'
+
+cd() { builtin cd "$@" && ls;}
+
+export PATH=.:~/lzh/exec:~/lzh/group0/bin:$PATH
+export EDITOR=vi
+
+REMOTE_IP=`echo $SSH_CLIENT |cut -d " " -f 1`
+#export DISPLAY="$REMOTE_IP:0.0"
+
+source ~/lzh/os_setup/eda_synopsys_2014.bash
+source ~/lzh/os_setup/eda_cadence.bash
+

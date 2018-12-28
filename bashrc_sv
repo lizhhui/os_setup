@@ -1,0 +1,4 @@
+source ~/lzh/os_setup/bashrc_common
+
+alias gitci='git ci -a -m "from server"; git push'
+

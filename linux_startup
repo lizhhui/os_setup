@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$HOSTNAME" == iZ94t8q7pmeZ ] ; then
+  supernode -l 6666 &
+  edge -a 10.0.0.4 -c group  -k 123qwe -l xxx:6666 -M 1200 -f
+elif [ "$HOSTNAME" == WorkStation ] ; then
+  echo "success "
+  edge -a 10.0.0.2 -c group  -k 123qwe -l xxx:6666 -M 1200 -f
+else
+  edge -a 10.0.0.3 -c group  -k 123qwe -l xxx:6666 -M 1200 -f
+fi
+
+#su - fixer -c '/home/fixer/lzh/os_setup/gitautopull.sh &' -l

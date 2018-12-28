@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# this install need root privilage
+
+cp hosts /private/etc/hosts
+cp hosts /etc/hosts

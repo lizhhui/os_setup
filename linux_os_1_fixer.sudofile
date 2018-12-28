@@ -1,0 +1,4 @@
+# Cmnd alias specification
+   	  Cmnd_Alias UCMD = /usr/bin/apt-get , /usr/bin/apt-add-repository, /usr/bin/add-apt-repository, /usr/bin/vi
+# User privilege specification
+          fixer   ALL=(root)NOPASSWD:UCMD

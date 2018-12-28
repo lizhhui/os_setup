@@ -1,0 +1,58 @@
+#!/bin/csh
+
+
+# 使能Ctrl+D退出
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+set autolist
+unset ignoreeof
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+#alias和prompt/PS
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+alias ls 'ls --color=auto'
+alias grep 'grep --color=auto'
+alias fgrep 'fgrep --color=auto'
+alias egrep 'egrep --color=auto'
+
+
+alias ll 'ls -alF'
+alias la 'ls -lA'
+alias l 'ls -CF'
+alias le 'less'
+alias cd 'cd \!*;ls'
+alias c 'cd ..'
+alias ff 'rm *~'
+alias vnckill 'vncserver -kill :77'
+alias vncopen 'vncserver -geometry 1400x900 :77'
+alias ssh 'ssh -o ServerAliveInterval=60 '
+
+alias short 'set prompt="%{\033];%~\007%}%{\e[34m%}%n%{\e[0m%}@212 %{\e[35m%}%c %{\e[0m%} "'
+alias long  'set prompt="%{\033];%~\007%}%{\e[34m%}%n%{\e[0m%}@212 %{\e[35m%}%~ %{\e[0m%} "'
+#set prompt="%{\e[34m%}%n%{\e[0m%}@212 %{\e[35m%}%~ :%{\e[0m%} "
+set prompt="%{\033];%~\007%}%{\e[34m%}%n%{\e[0m%}@212 %{\e[35m%}%~ %{\e[0m%} "
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+#远程显示设置/display
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#set REMOTEHOST 
+if ($?REMOTEHOST) then
+        setenv DISPLAY ${REMOTEHOST}:0
+endif
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+#path与MANPATH
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+set path=(./ ~/lzh/group0/bin ~/lzh/exec $path)
+#setenv MANPATH /usr/man:$MANPATH
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+#常用工具环境变量
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#setenv LM_LICENSE_FILE 27888@192.168.100.154:27005@192.168.100.238
+#setenv LD_LIBRARY_PATH /usr/local/protobuf/lib/:$LD_LIBRARY_PATH
+#setenv C_INCLUDE_PATH /home/digital4/lizh/source_file/install/include
+source ~/lzh/os_setup/tool_setup.csh
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝

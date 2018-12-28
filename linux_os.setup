@@ -1,0 +1,74 @@
+#!/bin/bash
+
+LZH_HOME="/home/fixer/lzh"
+
+TARGET="ws"
+choice="no"
+#for arg in "$@"
+#do
+#    case $arg in
+#	server*) TARGET="SERVER";echo "make sure you have root privilage";
+#    esac	    
+#done
+host_name=`hostname`
+if [ $host_name == "iZ94t8q7pmeZ" ] ; then
+	TARGET="sv"
+fi
+ echo "will process os customs on $TARGET (n/y no/yes)?"
+ read choice
+if [[ $choice != "y" &&  $choice != "yes" ]]  ; then
+    echo "you chose quit"
+    exit
+fi
+
+
+
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#SHELL设置
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  echo ".......process shell"
+  mv ~/.bashrc   ~/.bashrc_bak
+  mv ~/.cshrc    ~/.cshrc_bak
+#if [ ! -e ~/.cshrc_bak ] ;then
+#fi
+
+ln -s  $LZH_HOME/os_setup/bashrc_$TARGET ~/.bashrc
+ln -s  $LZH_HOME/os_setup/cshrc_$TARGET  ~/.cshrc
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#创建fixer用户
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#echo ".......adduser fixer"
+#adduser fixer
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#修改visudo，增加fixer的sudo功能
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#cat sudo_for_fixer >> /etc/sudoers
+#su fixer
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#git SET
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#echo ".......process git"
+#source ../git_conf/git.setup
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#vim SET
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#echo ".......process vim"
+#source ../vim/vim.setup
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+# packages install
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#source ./linux_os_0_package_install.bash
+
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+# workflow 
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#ln -s  $TARGET.workflow ~/$TARGET.workflow
+
+
+
