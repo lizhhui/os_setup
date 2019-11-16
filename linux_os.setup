@@ -14,6 +14,14 @@ host_name=`hostname`
 if [ $host_name == "iZ94t8q7pmeZ" ] ; then
 	TARGET="sv"
 fi
+ echo "make sure os_setup in lzh directory(n/y no/yes)?"
+ read choice
+if [[ $choice != "y" &&  $choice != "yes" ]]  ; then
+    echo "move os_setup to lzh directory"
+    exit
+fi
+
+
  echo "will process os customs on $TARGET (n/y no/yes)?"
  read choice
 if [[ $choice != "y" &&  $choice != "yes" ]]  ; then
@@ -27,14 +35,29 @@ fi
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 #SHELL设置
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-  echo ".......process shell"
-  mv ~/.bashrc   ~/.bashrc_bak
-  mv ~/.cshrc    ~/.cshrc_bak
-#if [ ! -e ~/.cshrc_bak ] ;then
-#fi
+echo ".......set shell source file"
+if [ -e ~/.bashrc ] ;then
+  echo "backup bashrc"
+  mv ~/.bashrc   ~/.bashrc_bak > /dev/null
+fi
 
-ln -s  $LZH_HOME/os_setup/bashrc_$TARGET ~/.bashrc
-ln -s  $LZH_HOME/os_setup/cshrc_$TARGET  ~/.cshrc
+if [ -e ~/.cshrc ] ;then
+  echo "backup cshrc"
+  mv ~/.cshrc    ~/.cshrc_bak > /dev/null
+fi
+
+if [ ! -e ~/.bashrc ] ;then
+  echo "link bashrc"
+  ln -s  $LZH_HOME/os_setup/bashrc_$TARGET ~/.bashrc
+fi
+
+if [ ! -e ~/.cshrc ] ;then
+  echo "link cshrc"
+  ln -s  $LZH_HOME/os_setup/cshrc_$TARGET  ~/.cshrc
+fi
+
+
+
 
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 #创建fixer用户
