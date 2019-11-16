@@ -74,14 +74,24 @@ fi
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 #git SET
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-#echo ".......process git"
-#source ../git_conf/git.setup
+ echo "set git command (n/y no/yes)?"
+ read choice
+if [[ $choice == "y" ||  $choice == "yes" ]]  ; then
+    echo ".......setting git cmd"
+    source $LZH_HOME/git_conf/git.setup
+fi
+
 
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 #vim SET
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-#echo ".......process vim"
-#source ../vim/vim.setup
+ echo "set vim (n/y no/yes)?"
+ read choice
+if [[ $choice == "y" ||  $choice == "yes" ]]  ; then
+    echo ".......setting vim"
+    source $LZH_HOME/vim/vim.setup
+fi
+
 
 #＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 # packages install
