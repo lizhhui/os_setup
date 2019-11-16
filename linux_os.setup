@@ -23,6 +23,9 @@ fi
 
 
  echo "will process os customs on $TARGET (n/y no/yes)?"
+ echo "you need these git repo below"
+ echo " : 1. git_conf"
+ echo " : 2. vim"
  read choice
 if [[ $choice != "y" &&  $choice != "yes" ]]  ; then
     echo "you chose quit"
