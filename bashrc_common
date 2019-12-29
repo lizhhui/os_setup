@@ -1,5 +1,5 @@
 # set this ,may cause emacs org publish ,ssh trump timeout reached
-#PS1="\[\e[33m\]\u@\h\[\e[0m\]: \[\e[35m\]\w  \[\e[0m\]"
+PS1="\[\e[33m\]\u@\h\[\e[0m\]: \[\e[35m\]\w  \[\e[0m\]"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

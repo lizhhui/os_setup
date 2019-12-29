@@ -1,0 +1,17 @@
+remove mod1 = Alt_L
+remove mod4 = Super_L
+
+keysym Super_L = Alt_L
+keysym Alt_L = Super_L
+
+add mod1 = Alt_L
+add mod4 = Super_L
+
+! check how key mapped
+!xmodmap -pm  
+! write this file to convert keys
+! use xmodmap command to make it affect
+!xmodmap key_remap.txt
+! dumpkeys command to .Xmodmap to make it affect permannet
+!sudo dumpkeys > ~/.Xmodmap
+
