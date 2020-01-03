@@ -1,0 +1,2 @@
+覆盖/etc/apt/source.list 选用阿里云的apt-get install 源
+cp source.list_for_ubuntu_16.04 /etc/apt/source.list

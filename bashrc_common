@@ -30,6 +30,6 @@ export EDITOR=vi
 REMOTE_IP=`echo $SSH_CLIENT |cut -d " " -f 1`
 #export DISPLAY="$REMOTE_IP:0.0"
 
-source ~/lzh/os_setup/eda_synopsys_2014.bash
-source ~/lzh/os_setup/eda_cadence.bash
+#source ~/lzh/os_setup/eda_synopsys_2014.bash
+#source ~/lzh/os_setup/eda_cadence.bash
 
