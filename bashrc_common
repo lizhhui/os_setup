@@ -14,12 +14,11 @@ alias c='cd ..'
 alias le='less'
 alias vnckill='vncserver -kill :77'
 alias vncopen='vncserver -geometry 1400x900 :77'
-alias ssh='ssh -o ServerAliveInterval=60 '
 alias em='cd ~/lzh/Emacs/org/z_blog ; emacs -nw -Q'
 alias e='emacs -eval "(wg-load \"$PWD/emacs.layout\")" &'
 alias ff='rm *~'
 alias dotpng='dot -Tpng -o xx.png'
-alias my='ssh fixer@10.0.0.2'
+alias my='ssh -o ServerAliveInterval=3 -o ConnectTimeout=3 root@38.147.162.161'
 alias apa_re='sudo apachectl -k graceful'
 
 cd() { builtin cd "$@" && ls;}
@@ -29,6 +28,8 @@ export EDITOR=vi
 
 REMOTE_IP=`echo $SSH_CLIENT |cut -d " " -f 1`
 #export DISPLAY="$REMOTE_IP:0.0"
+#export http_proxy="socks5://127.0.0.1:1080"
+#export https_proxy="socks5://127.0.0.1:1080"
 
 #source ~/lzh/os_setup/eda_synopsys_2014.bash
 #source ~/lzh/os_setup/eda_cadence.bash
