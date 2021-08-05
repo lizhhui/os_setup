@@ -1,4 +1,4 @@
-source ~/lzh/os_setup/bashrc_common
+source ~/os_setup/bashrc_common
 source ~/EDA/eda.bashrc
 
 alias gitci='git ci -a -m "from workstation"; git push'

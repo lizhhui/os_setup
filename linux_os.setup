@@ -1,5 +1,59 @@
 #!/bin/bash
 
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+#SHELL设置
+#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+echo ".......set shell source file"
+if [ ! -e ~/.bashrc_bak ] ;then
+  echo "backup bashrc"
+  mv ~/.bashrc   ~/.bashrc_bak > /dev/null
+fi
+
+if [ ! -e ~/.cshrc_bak ] ;then
+  echo "backup cshrc"
+  mv ~/.cshrc    ~/.cshrc_bak > /dev/null
+fi
+
+if [ -e ~/.bashrc_bak ] ;then
+  echo "link bashrc"
+  rm ~/.bashrc
+  ln -s  ~/os_setup/bashrc_ws ~/.bashrc
+fi
+
+if [ -e ~/.cshrc_bak ] ;then
+  echo "link cshrc"
+  rm ~/.cshrc
+  ln -s  ~/os_setup/cshrc_ws  ~/.cshrc
+fi
+
+
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 LZH_HOME="/home/fixer/lzh"
 
 TARGET="ws"
@@ -30,33 +84,6 @@ fi
 if [[ $choice != "y" &&  $choice != "yes" ]]  ; then
     echo "you chose quit"
     exit
-fi
-
-
-
-
-#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-#SHELL设置
-#＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-echo ".......set shell source file"
-if [ -e ~/.bashrc ] ;then
-  echo "backup bashrc"
-  mv ~/.bashrc   ~/.bashrc_bak > /dev/null
-fi
-
-if [ -e ~/.cshrc ] ;then
-  echo "backup cshrc"
-  mv ~/.cshrc    ~/.cshrc_bak > /dev/null
-fi
-
-if [ ! -e ~/.bashrc ] ;then
-  echo "link bashrc"
-  ln -s  $LZH_HOME/os_setup/bashrc_$TARGET ~/.bashrc
-fi
-
-if [ ! -e ~/.cshrc ] ;then
-  echo "link cshrc"
-  ln -s  $LZH_HOME/os_setup/cshrc_$TARGET  ~/.cshrc
 fi
 
 
