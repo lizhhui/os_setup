@@ -1,0 +1,15 @@
+[user]
+	name = server
+	email = admin@lizhanghui.com
+[alias]
+	co = checkout
+	st = status
+	rst = reset --hard
+	pl = pull
+	ph = push
+	log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ci = commit
+[core]
+	quotepath = false
+[push]
+	default = matching
